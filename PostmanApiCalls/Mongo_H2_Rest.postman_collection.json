@@ -1,0 +1,133 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Mongo_H2",
+		"_postman_id": "135fdf3e-d193-2c01-cb2f-6d985ed06d12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person_Find",
+			"request": {
+				"url": "http://localhost:8080/api/person/find/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Person_Find_ById",
+			"request": {
+				"url": "http://localhost:8080/api/person/find/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Person_Create",
+			"request": {
+				"url": "http://localhost:8080/api/person/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ioannis\",\n\t\"surname\":\"Karavasilis\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Find",
+			"request": {
+				"url": "http://localhost:8080/api/comment/find",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Find_ByPersonId",
+			"request": {
+				"url": "http://localhost:8080/api/comment/find/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Create",
+			"request": {
+				"url": "http://localhost:8080/api/comment/create/giannis",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_SetPerson",
+			"request": {
+				"url": "http://localhost:8080/api/comment/5b4c90356ddbb01bdc31ccf3/setPerson/1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
