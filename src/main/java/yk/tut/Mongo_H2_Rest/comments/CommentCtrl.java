@@ -30,12 +30,12 @@ public final class CommentCtrl {
 		this.personSrv = personSrv;
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/")
 	public ResponseEntity<?> findAll(){
 		return new ResponseEntity<List<Comment>>(commentSrv.findAll(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/find/{personId}")
+	@GetMapping("/person/{personId}")
 	public ResponseEntity<?> findByPerson(@PathVariable Long personId){
 		Person person = personSrv.findById(personId);
 		if(person == null) {
@@ -45,14 +45,14 @@ public final class CommentCtrl {
 		return new ResponseEntity<List<Comment>>(comments, HttpStatus.OK);
 	}
 	
-	@PostMapping("/create/{message}")
+	@PostMapping("/{message}")
 	public ResponseEntity<?> create(@PathVariable String message){
 		Comment comment = new Comment(message);
 		commentSrv.save(comment);
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 	
-	@PostMapping("{commentId}/setPerson/{personId}")
+	@PostMapping("/person/{personId}/{commentId}")
 	public ResponseEntity<?> setPersonOnComment(@PathVariable String commentId, @PathVariable Long personId){
 		Comment comment = commentSrv.findById(commentId);
 		if(comment == null) {
