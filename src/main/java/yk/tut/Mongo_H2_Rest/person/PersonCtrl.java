@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +26,7 @@ public final class PersonCtrl {
 		this.personSrv = personSrv;
 	}
 
-	@GetMapping("/find/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<?> find(@PathVariable Long id){
 		Person person = personSrv.findById(id);
 		if(person == null) {
@@ -35,7 +35,7 @@ public final class PersonCtrl {
 		return new ResponseEntity<Person>(person, HttpStatus.OK);
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/")
 	public ResponseEntity<?> findAll(){
 		List<Person> persons = personSrv.findAll();
 		if(persons.isEmpty()) {
@@ -44,7 +44,7 @@ public final class PersonCtrl {
 		return new ResponseEntity<List<Person>>(persons, HttpStatus.OK);
 	}
 	
-	@PostMapping("/create")
+	@PutMapping("/")
 	public ResponseEntity<?> create(@RequestBody Person person){
 		if(person == null) {
 			return new ResponseEntity<String>("Person is NULL.", HttpStatus.BAD_REQUEST);
