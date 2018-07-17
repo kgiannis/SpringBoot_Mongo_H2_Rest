@@ -1,16 +1,16 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Mongo_H2",
+		"name": "Mongo_H2_Rest",
 		"_postman_id": "135fdf3e-d193-2c01-cb2f-6d985ed06d12",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Person_Find",
+			"name": "Api_Person_Find",
 			"request": {
-				"url": "http://localhost:8080/api/person/find/",
+				"url": "http://localhost:8080/api/person/",
 				"method": "GET",
 				"header": [
 					{
@@ -25,9 +25,9 @@
 			"response": []
 		},
 		{
-			"name": "Person_Find_ById",
+			"name": "Api_Person_Find_ById",
 			"request": {
-				"url": "http://localhost:8080/api/person/find/1",
+				"url": "http://localhost:8080/api/person/1",
 				"method": "GET",
 				"header": [
 					{
@@ -42,10 +42,10 @@
 			"response": []
 		},
 		{
-			"name": "Person_Create",
+			"name": "Api_Person_CreateUpdate",
 			"request": {
-				"url": "http://localhost:8080/api/person/create",
-				"method": "POST",
+				"url": "http://localhost:8080/api/person/",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -62,9 +62,9 @@
 			"response": []
 		},
 		{
-			"name": "Comment_Find",
+			"name": "Api_Comment_Find_All",
 			"request": {
-				"url": "http://localhost:8080/api/comment/find",
+				"url": "http://localhost:8080/api/comment/",
 				"method": "GET",
 				"header": [
 					{
@@ -79,9 +79,9 @@
 			"response": []
 		},
 		{
-			"name": "Comment_Find_ByPersonId",
+			"name": "Api_Comment_Find_ByPersonId",
 			"request": {
-				"url": "http://localhost:8080/api/comment/find/1",
+				"url": "http://localhost:8080/api/comment/person/1",
 				"method": "GET",
 				"header": [
 					{
@@ -96,9 +96,9 @@
 			"response": []
 		},
 		{
-			"name": "Comment_Create",
+			"name": "Api_Comment_Create",
 			"request": {
-				"url": "http://localhost:8080/api/comment/create/giannis",
+				"url": "http://localhost:8080/api/comment/test_message",
 				"method": "POST",
 				"header": [
 					{
@@ -113,9 +113,9 @@
 			"response": []
 		},
 		{
-			"name": "Comment_SetPerson",
+			"name": "Api_Comment_SetPerson",
 			"request": {
-				"url": "http://localhost:8080/api/comment/5b4c90356ddbb01bdc31ccf3/setPerson/1",
+				"url": "http://localhost:8080/api/comment/person/1/5b4c90356ddbb01bdc31ccf3",
 				"method": "POST",
 				"header": [
 					{
